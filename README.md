@@ -1,2 +1,2 @@
-# fima-final_paper
+# Financial Manager - LaTeX Source Code
 Financial Manager Final Paper's Source Code
