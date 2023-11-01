@@ -1,0 +1,215 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modelo LaTex para TCC e PIM do Programa de Graduação nas áreas de Computadação da USCS % 
+%         NÃO MODIFICAR ESSA PARTE, SOMENTE A PARTIR DE "INICIO DO DOCUMENTO"            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \documentclass[
+	% -- opções da classe memoir --
+	12pt,					% tamanho da fonte
+	openright,				% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,					% para impressão em somente um lado da folha.
+	a4paper,					% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,			% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,			% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,		% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,	% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,					% idioma adicional para hifenização
+	%french,					% idioma adicional para hifenização
+	%spanish,				% idioma adicional para hifenização
+	portuguese					% o último idioma é o principal do documento
+	]{abntex2}
+
+% ----------------------
+% Pacotes OBRIGATÓRIOS
+% ----------------------
+%\usepackage{times}				% Usa a fonte Times New Roman
+\usepackage[scaled]{helvet} % usa a fonte arial
+\renewcommand\familydefault{\sfdefault} % mantém a fonte como padrão do documento
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx,graphicx}	% Inclusão de gráficos
+\usepackage{epsfig,subfig}		% Inclusão de figuras
+\usepackage{microtype} 			% Melhorias de justificação
+\usepackage[lmargin=3cm,tmargin=3cm,rmargin=2cm,bmargin=2cm]{geometry} %Formato de margem nas normas ABNT
+\usepackage[authoryear]{natbib}
+\setsecheadstyle{\bfseries \large}
+
+% ---------------------
+		
+% ---------------------
+% Pacotes ADICIONAIS
+% ---------------------
+\usepackage{lipsum}						% Geração de dummy text
+\usepackage{amsmath,amssymb,mathrsfs}	% Comandos matemáticos avançados 
+\usepackage{setspace}  					% Para permitir espaçamento simples, 1 1/2 e duplo
+\usepackage{verbatim}					% Para poder usar o ambiente "comment"
+\usepackage{tabularx} 					% Para poder ter tabelas com colunas de largura auto-ajustável
+\usepackage{afterpage} 					% Para executar um comando depois do fim da página corrente
+\usepackage{xurl} 						% Para formatar URLs (endereços da Web)
+\setlength\afterchapskip{18pt}          % Ajusta o espaçamento entre o título do capitulo e o texto para 1,5
+\usepackage{titlesec}
+\renewcommand{\ABNTEXchapterfontsize}{\bfseries\Large} % Define tamanho da fonte para capítulos, seções e sub seções.
+\renewcommand{\ABNTEXsectionfontsize}{\bfseries\normalsize}
+\renewcommand{\ABNTEXsubsectionfontsize}{\bfseries\normalsize}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\bfseries\normalsize}
+\usepackage[alf,abnt-etal-list=0,abnt-etal-cite=3]{abntex2cite}
+\citeoption{abnt-etal-cite=3}
+
+% ---------------------
+
+% ---------------------
+% Pacotes de CITAÇÕES
+% ---------------------
+%\usepackage[brazilian,hyperpageref]{backref}	% Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}				% Citações padrão ABNT (alfa)
+%\usepackage[num]{abntex2cite}				% Citações padrão ABNT (numericas)
+% ---------------------
+
+% Configurações de CITAÇÕES para abntex2
+\include{extras/conf_citacoes}
+
+% Inclusão de dados para CAPA e FOLHA DE ROSTO (título, autor, orientador, etc.)
+\include{extras/dados}
+
+% Inclui Configurações de aparência do PDF Final
+\include{extras/conf_pdf}
+
+% O tamanho da identação do parágrafo é dado por:
+\setlength{\parindent}{1.25cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---------------------
+% Compila o indice
+% ---------------------
+\makeindex
+% ---------------------
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  INICIO DO DOCUMENTO -- MODIFICAR A PARTIR DAQUI SOMENTE!! %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   ELEMENTOS PRÉ-TEXTUAIS (Capa, Resumo, Abstract, etc.)     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pretextual
+
+% Capa
+\include{1_pretextual/1_capa.tex}
+
+%Contracapa
+\include{1_pretextual/2_contracapa.tex}
+
+% Folha de rosto (o * indica que haverá a ficha bibliográfica)
+%\imprimirfolhaderosto*
+\include{1_pretextual/3_folhaderosto.tex}
+
+% Imprimir Ficha catalográfica -- Deve ser impressa no verso da folha de rosto
+\include{1_pretextual/4_catalografica.tex}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+% Estrutura Organizacional USCS
+\include{1_pretextual/5_estrutura.tex}
+
+% Página destinada a assinatura dos professores da Banca caso TCC seja aprovado
+\include{1_pretextual/6_assinaturas.tex}
+
+% Dedicatória
+%\include{1_pretextual/7_dedicatoria.tex}
+
+% Agradecimentos
+\include{1_pretextual/8_agradecimentos.tex}
+
+% Epígrafe
+\include{1_pretextual/9_epigrafe.tex}
+
+% Resumo e Abstract
+\include{1_pretextual/resumos}
+
+% Lista de ilustrações %%caso precise remover alguma das listas, inserir "%" na frente dos três comandos referente a mesma.%%
+\pdfbookmark[0]{\listfigurename}{lot}
+\listoffigures*                 
+\cleardoublepage
+
+% Lista de tabelas 
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+% Lista de abreviaturas e siglas
+\begin{siglas}
+  \item [ABNT] Associação Brasileira de Normas Técnicas
+  \item [abnTeX] Normas para TeX
+  \item [iOS] iPhone Operational System
+  \item [CPF] Cadastro de Pessoa Física
+  \item [CNPJ] Cadastro de Pessoa Jurídica
+  \item [CRUD] Create, Read, Update e Delete
+  \item [LGPD] Lei Geral de Proteção de Dados
+  \item [API] Interface de Programação de Aplicação
+  \item [ENEF] Estratégia Nacional de Educação Financeira
+\end{siglas}
+
+% Lista de símbolos
+\begin{simbolos}
+  \item[$ \Gamma $] Letra grega Gama
+  \item[$ \Lambda $] Lambda
+  \item[$ \zeta $] Letra grega minúscula zeta
+  \item[$ \in $] Pertence
+\end{simbolos}
+
+% Inserir o SUMÁRIO
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  ELEMENTOS TEXTUAIS (Capítulos/Contéudo do Trabalho)  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textual %% Adiciona cabeçalho nas páginas, com numeração e título
+\pagestyle{simple} % tira cabeçalho com nome do capítulo e exibe só paginação
+% Elementos textuais com numeração arábica
+%\pagenumbering{arabic}
+% Reinicia a contagem do número de páginas
+%\setcounter{page}{1}
+
+% Inclui cada capitulo da Dissertação
+\include{2_capitulos/1_introducao.tex}
+\include{2_capitulos/2_referencial}
+\include{2_capitulos/3_pesquisa}
+\include{2_capitulos/4_desenvolvimento}
+\include{2_capitulos/5_testes}
+\include{2_capitulos/6_consideracoes}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ELEMENTOS PÓS-TEXTUAIS (Referências, Glossário, Apêndices) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\postextual
+
+% Referências bibliográficas
+\bibliography{bibliografia}
+
+% Apêndices
+\include{3_postextual/apendices}
+
+% Anexos
+%\include{3_postextual/anexos}
+
+
+\end{document}
