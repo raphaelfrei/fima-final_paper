@@ -114,6 +114,9 @@
 %Contracapa
 \include{1_pretextual/2_contracapa.tex}
 
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
 % Folha de rosto (o * indica que haverá a ficha bibliográfica)
 %\imprimirfolhaderosto*
 \include{1_pretextual/3_folhaderosto.tex}
@@ -121,8 +124,6 @@
 % Imprimir Ficha catalográfica -- Deve ser impressa no verso da folha de rosto
 \include{1_pretextual/4_catalografica.tex}
 
-\pagenumbering{arabic}
-\setcounter{page}{1}
 % Estrutura Organizacional USCS
 \include{1_pretextual/5_estrutura.tex}
 
@@ -154,7 +155,7 @@
 % Lista de abreviaturas e siglas
 \begin{siglas}
   \item [ABNT] Associação Brasileira de Normas Técnicas
-  \item [abnTeX] Normas para TeX
+  \item [FiMa] Aplicativo Financial Manager
   \item [iOS] iPhone Operational System
   \item [CPF] Cadastro de Pessoa Física
   \item [CNPJ] Cadastro de Pessoa Jurídica
@@ -162,15 +163,16 @@
   \item [LGPD] Lei Geral de Proteção de Dados
   \item [API] Interface de Programação de Aplicação
   \item [ENEF] Estratégia Nacional de Educação Financeira
+  \item [MVP] Mínimo Produto Viável
 \end{siglas}
 
 % Lista de símbolos
-\begin{simbolos}
-  \item[$ \Gamma $] Letra grega Gama
-  \item[$ \Lambda $] Lambda
-  \item[$ \zeta $] Letra grega minúscula zeta
-  \item[$ \in $] Pertence
-\end{simbolos}
+%\begin{simbolos}
+%  \item[$ \Gamma $] Letra grega Gama
+%  \item[$ \Lambda $] Lambda
+%  \item[$ \zeta $] Letra grega minúscula zeta
+%  \item[$ \in $] Pertence
+%\end{simbolos}
 
 % Inserir o SUMÁRIO
 \pdfbookmark[0]{\contentsname}{toc}
